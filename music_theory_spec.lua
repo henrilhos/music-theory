@@ -1,146 +1,168 @@
-require("music_theory")
+Scale = require("oo")
 
 describe("Music theory tests", function()
     describe("C scales", function()
+        local scaleC = Scale:new("C")
+
         it("Major scale", function()
-            assert.are
-                .same(MajorScale("C"), {"C", "D", "E", "F", "G", "A", "B"})
+            assert.are.same(scaleC:major(), {"C", "D", "E", "F", "G", "A", "B"})
         end)
 
         it("Minor scale", function()
-            assert.are.same(MinorScale("C"),
+            assert.are.same(scaleC:minor(),
                             {"C", "D", "D#", "F", "G", "G#", "A#"})
         end)
     end)
 
     describe("C# Scales", function()
+        local scaleCs = Scale:new("C#")
+
         it("Major scale", function()
-            assert.are.same(MajorScale("C#"),
+            assert.are.same(scaleCs:major(),
                             {"C#", "D#", "F", "F#", "G#", "A#", "C"})
         end)
 
         it("Minor scale", function()
-            assert.are.same(MinorScale("C#"),
+            assert.are.same(scaleCs:minor(),
                             {"C#", "D#", "E", "F#", "G#", "A", "B"})
         end)
     end)
 
     describe("D Scales", function()
+        local scaleD = Scale:new("D")
+
         it("Major scale", function()
-            assert.are.same(MajorScale("D"),
+            assert.are.same(scaleD:major(),
                             {"D", "E", "F#", "G", "A", "B", "C#"})
         end)
 
         it("Minor scale", function()
-            assert.are.same(MinorScale("D"),
-                            {"D", "E", "F", "G", "A", "A#", "C"})
+            assert.are
+                .same(scaleD:minor(), {"D", "E", "F", "G", "A", "A#", "C"})
         end)
     end)
 
     describe("D# Scales", function()
+        local scaleDs = Scale:new("D#")
+
         it("Major scale", function()
-            assert.are.same(MajorScale("D#"),
+            assert.are.same(scaleDs:major(),
                             {"D#", "F", "G", "G#", "A#", "C", "D"})
         end)
 
         it("Minor scale", function()
-            assert.are.same(MinorScale("D#"),
+            assert.are.same(scaleDs:minor(),
                             {"D#", "F", "F#", "G#", "A#", "B", "C#"})
         end)
     end)
 
     describe("E Scales", function()
+        local scaleE = Scale:new("E")
+
         it("Major scale", function()
-            assert.are.same(MajorScale("E"),
+            assert.are.same(scaleE:major(),
                             {"E", "F#", "G#", "A", "B", "C#", "D#"})
         end)
 
         it("Minor scale", function()
-            assert.are.same(MinorScale("E"),
-                            {"E", "F#", "G", "A", "B", "C", "D"})
+            assert.are
+                .same(scaleE:minor(), {"E", "F#", "G", "A", "B", "C", "D"})
         end)
     end)
 
     describe("F Scales", function()
+        local scaleF = Scale:new("F")
+
         it("Major scale", function()
-            assert.are.same(MajorScale("F"),
-                            {"F", "G", "A", "A#", "C", "D", "E"})
+            assert.are
+                .same(scaleF:major(), {"F", "G", "A", "A#", "C", "D", "E"})
         end)
 
         it("Minor scale", function()
-            assert.are.same(MinorScale("F"),
+            assert.are.same(scaleF:minor(),
                             {"F", "G", "G#", "A#", "C", "C#", "D#"})
         end)
     end)
 
     describe("F# Scales", function()
+        local scaleFs = Scale:new("F#")
+
         it("Major scale", function()
-            assert.are.same(MajorScale("F#"),
+            assert.are.same(scaleFs:major(),
                             {"F#", "G#", "A#", "B", "C#", "D#", "F"})
         end)
 
         it("Minor scale", function()
-            assert.are.same(MinorScale("F#"),
+            assert.are.same(scaleFs:minor(),
                             {"F#", "G#", "A", "B", "C#", "D", "E"})
         end)
     end)
 
     describe("G Scales", function()
+        local scaleG = Scale:new("G")
+
         it("Major scale", function()
-            assert.are.same(MajorScale("G"),
-                            {"G", "A", "B", "C", "D", "E", "F#"})
+            assert.are
+                .same(scaleG:major(), {"G", "A", "B", "C", "D", "E", "F#"})
         end)
 
         it("Minor scale", function()
-            assert.are.same(MinorScale("G"),
+            assert.are.same(scaleG:minor(),
                             {"G", "A", "A#", "C", "D", "D#", "F"})
         end)
     end)
 
     describe("G# Scales", function()
+        local scaleGs = Scale:new("G#")
+
         it("Major scale", function()
-            assert.are.same(MajorScale("G#"),
+            assert.are.same(scaleGs:major(),
                             {"G#", "A#", "C", "C#", "D#", "F", "G"})
         end)
 
         it("Minor scale", function()
-            assert.are.same(MinorScale("G#"),
+            assert.are.same(scaleGs:minor(),
                             {"G#", "A#", "B", "C#", "D#", "E", "F#"})
         end)
     end)
 
     describe("A Scales", function()
+        local scaleA = Scale:new("A")
+
         it("Major scale", function()
-            assert.are.same(MajorScale("A"),
+            assert.are.same(scaleA:major(),
                             {"A", "B", "C#", "D", "E", "F#", "G#"})
         end)
 
         it("Minor scale", function()
-            assert.are
-                .same(MinorScale("A"), {"A", "B", "C", "D", "E", "F", "G"})
+            assert.are.same(scaleA:minor(), {"A", "B", "C", "D", "E", "F", "G"})
         end)
     end)
 
     describe("A# Scales", function()
+        local scaleAs = Scale:new("A#")
+
         it("Major scale", function()
-            assert.are.same(MajorScale("A#"),
+            assert.are.same(scaleAs:major(),
                             {"A#", "C", "D", "D#", "F", "G", "A"})
         end)
 
         it("Minor scale", function()
-            assert.are.same(MinorScale("A#"),
+            assert.are.same(scaleAs:minor(),
                             {"A#", "C", "C#", "D#", "F", "F#", "G#"})
         end)
     end)
 
     describe("B Scales", function()
+        local scaleB = Scale:new("B")
+
         it("Major scale", function()
-            assert.are.same(MajorScale("B"),
+            assert.are.same(scaleB:major(),
                             {"B", "C#", "D#", "E", "F#", "G#", "A#"})
         end)
 
         it("Minor scale", function()
-            assert.are.same(MinorScale("B"),
+            assert.are.same(scaleB:minor(),
                             {"B", "C#", "D", "E", "F#", "G", "A"})
         end)
     end)

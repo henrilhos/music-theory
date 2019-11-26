@@ -1,21 +1,20 @@
 require("helpers.table")
 
-local NOTES = {"C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A", "A#", "B"}
-local MAJOR_INTERVALS = {2, 2, 1, 2, 2, 2, 1}
-local MINOR_INTERVALS = {2, 1, 2, 2, 1, 2, 2}
+local function reassembleNotes(note)
+    local NOTES = {
+        "C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A", "A#", "B"
+    }
+
+    return table.merge(table.slice(NOTES, table.indexOf(NOTES, note),
+                                   table.maxn(NOTES)),
+                       table.slice(NOTES, 1, (table.indexOf(NOTES, note) - 1)))
+end
 
 local function scale(note, intervals)
-    notes = {}
+    local notes = {}
+    local reassembled_notes = reassembleNotes(note)
 
-    note_position = table.indexOf(NOTES, note)
-    notes_length = table.maxn(NOTES)
-
-    notes_a = table.slice(NOTES, note_position, notes_length)
-    notes_b = table.slice(NOTES, 1, note_position - 1)
-
-    reassembled_notes = table.merge(notes_a, notes_b)
-
-    aux = 1
+    local aux = 1
     for key, value in pairs(intervals) do
         table.insert(notes, reassembled_notes[aux])
 
@@ -25,6 +24,13 @@ local function scale(note, intervals)
     return notes
 end
 
-function MajorScale(note) return scale(note, MAJOR_INTERVALS) end
+local Scale = {}
+Scale.__index = Scale
 
-function MinorScale(note) return scale(note, MINOR_INTERVALS) end
+function Scale:new(note) return setmetatable({note = note}, Scale) end
+
+function Scale:major() return scale(self.note, {2, 2, 1, 2, 2, 2, 1}) end
+
+function Scale:minor() return scale(self.note, {2, 1, 2, 2, 1, 2, 2}) end
+
+return Scale
