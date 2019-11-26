@@ -25,6 +25,6 @@ local function scale(note, intervals)
     return notes
 end
 
-function majorScale(note) return scale(note, MAJOR_INTERVALS) end
+function MajorScale(note) return scale(note, MAJOR_INTERVALS) end
 
-function minorScale(note) return scale(note, MINOR_INTERVALS) end
+function MinorScale(note) return scale(note, MINOR_INTERVALS) end
