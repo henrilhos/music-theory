@@ -1,9 +1,11 @@
 # Music Theory
 
+Generate major and natural minor scales from a root note in Lua.
+
 ## Problem
 
-Given the musical notes (C, C#, D, D#, E, F, F#, G, G#, A, A#, B)
-we want to build the Major and Minor scales.
+Given the chromatic notes (C, C#, D, D#, E, F, F#, G, G#, A, A#, B),
+build major and natural minor scales.
 
 ## Requirements
 
@@ -13,7 +15,7 @@ Receives the root note
 
 ### Output
 
-Returns the Major and Minor scale
+Returns the major and natural minor scales.
 
 ### Tests
 
@@ -27,7 +29,7 @@ Must test for:
 | Input | Output                  |
 | :---: | :---------------------- |
 |   C   | Major: C D E F G A B    |
-|       | Minor: C D Eb F G Ab Bb |
+|       | Minor: C D D# F G G# A# |
 
 # The Lua Version
 
