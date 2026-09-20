@@ -1,4 +1,4 @@
-Scale = require("oo")
+Scale = require("music_theory")
 
 describe("Music theory tests", function()
     describe("C scales", function()

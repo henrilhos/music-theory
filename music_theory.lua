@@ -6,7 +6,7 @@ local function reassembleNotes(note)
     }
 
     return table.merge(table.slice(NOTES, table.indexOf(NOTES, note),
-                                   table.maxn(NOTES)),
+                                   #NOTES),
                        table.slice(NOTES, 1, (table.indexOf(NOTES, note) - 1)))
 end
 
