@@ -36,6 +36,24 @@ Must test for:
 - Lua (>= 5.3.5)
 - Busted (>= 2.0.0)
 
+## Installation
+
+```bash
+brew install lua luarocks
+luarocks install busted
+```
+
+## Usage
+
+```lua
+local Scale = require("music_theory")
+
+local scaleC = Scale:new("C")
+
+scaleC:major() -- {"C", "D", "E", "F", "G", "A", "B"}
+scaleC:minor() -- {"C", "D", "D#", "F", "G", "G#", "A#"}
+```
+
 ## Running
 
 You can run the tests on the terminal with Busted
